@@ -56,19 +56,19 @@ describe("Dealership prototype methods", () => {
 
   test("can filter by manufacturer", () => {
     const manufacturerCallback = (manufacturer) => {
-      return this.carsInStock.filter(car => car.manufacturer === manufacturer);
+      return dealership1.carsInStock.filter(car => car.manufacturer === manufacturer);
     }
     const expected = [car2, car6];
     const actual = dealership1.filterBy("Audi", manufacturerCallback);
     expect(actual).toEqual(expected);
   })
 
-  test("can filter below price", () => {
+  test("can filter by price", () => {
     const priceCallback = (price) => {
-      return this.carsInStock.filter(car => car.price <= price);
+      return dealership1.carsInStock.filter(car => car.price <= price);
     }
     const expected = [car4];
-    const actual = dealership1.filterBy(600, priceCallback);
+    const actual = dealership1.filterBy(7000, priceCallback);
     expect(actual).toEqual(expected);
   })
   
